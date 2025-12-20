@@ -69,20 +69,17 @@
     :global(html) {
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth;
-        height: 100vh;
         overflow-y: scroll;
+        height: 100vh;
     }
     
     :global(body) {
         margin: 0;
         padding: 0;
-        height: 100vh;
-        overflow-y: scroll;
     }
     
     .page {
         height: 100vh;
-        width: 100%;
         scroll-snap-align: start;
         scroll-snap-stop: always;
     }

@@ -46,7 +46,6 @@
 </script>
 
 
-<div class="bg-[var(--color-background)] text-[var(--color-text)]">
 	<!-- =========================
 	HEADER / NAVIGATION BAR
 	 ========================= -->
@@ -144,4 +143,3 @@
 			</div>
 		</footer>
 
-</div>
