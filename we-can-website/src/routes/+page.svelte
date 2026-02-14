@@ -1,174 +1,194 @@
-<!-- <h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
-
-<hr class="my-4" />
-
-<p>
-	Test navigation:
-	<a href="/projects" class="underline text-primary-500 hover:text-primary-700">
-		Go to Projects
-	</a>
-</p>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p> -->
-
 <script lang="ts">
-	import './layout.css';
-	import { ArrowLeft, ArrowRight } from '@lucide/svelte';
-	
-	// =========================
-	// GALLERY CONSTANTS
-	// =========================
-	
-	/** Carousel arrow button styles. */
-	const carouselArrowBtn = 'btn-icon preset-filled bg-[var(--color-surface-500)] hover:bg-[var(--color-surface-600)] text-white';
+	import {
+		Instagram,
+		Linkedin,
+		Youtube,
+		Github,
+		ArrowLeft,
+		ArrowRight,
+		ChevronDown,
+		Zap,
+		Globe,
+		Users,
+		Award
+	} from '@lucide/svelte';
 
-	/** Array of placeholder images for the gallery carousel. */
-	const generatedArray = Array.from({ length: 6 });
-	
-	/** Reference to the carousel container element. */
+	const LINKEDIN_URL = 'https://www.linkedin.com/company/biorocket/';
+	const GITHUB_URL = 'https://github.com/Bio-Rocket';
+	const YOUTUBE_URL = 'https://www.youtube.com/@BioRocket-yyc';
+	const INSTAGRAM_URL = 'https://www.instagram.com/biorocketuofc/';
+
+	const generatedArray = Array.from({ length: 7 });
 	let elemCarousel: HTMLDivElement | null = null;
 
-	/**
-	 * Scroll the carousel one full "page" to the left.
-	 * Wraps to the last slide if currently at the start.
-	 */
 	function carouselLeft() {
 		if (!elemCarousel) return;
-		const x = elemCarousel.scrollLeft === 0
-			? elemCarousel.clientWidth * elemCarousel.childElementCount
-			: elemCarousel.scrollLeft - elemCarousel.clientWidth;
-		elemCarousel.scroll(x, 0);
+		if (elemCarousel.scrollLeft <= 0) {
+			elemCarousel.scroll(elemCarousel.scrollWidth - elemCarousel.clientWidth, 0);
+		} else {
+			elemCarousel.scroll(elemCarousel.scrollLeft - elemCarousel.clientWidth, 0);
+		}
 	}
 
-	/**
-	 * Scroll the carousel one full "page" to the right.
-	 * Wraps to the first slide if currently at the end.
-	 */
 	function carouselRight() {
 		if (!elemCarousel) return;
-		const x = elemCarousel.scrollLeft === elemCarousel.scrollWidth - elemCarousel.clientWidth
-			? 0
-			: elemCarousel.scrollLeft + elemCarousel.clientWidth;
-		elemCarousel.scroll(x, 0);
+		const maxScroll = elemCarousel.scrollWidth - elemCarousel.clientWidth;
+		if (elemCarousel.scrollLeft >= maxScroll - 1) {
+			elemCarousel.scroll(0, 0);
+		} else {
+			elemCarousel.scroll(elemCarousel.scrollLeft + elemCarousel.clientWidth, 0);
+		}
 	}
-
-	/**
-	 * Scroll the carousel to a specific slide based on index.
-	 * @param index - The index of the carousel item to scroll to.
-	 */
 
 	function carouselThumbnail(index: number) {
 		if (elemCarousel) {
 			elemCarousel.scroll(elemCarousel.clientWidth * index, 0);
 		}
 	}
+
+	const stats = [
+		{ icon: Users, value: '100+', label: 'Students Impacted' },
+		{ icon: Globe, value: 'W. Canada', label: 'Outreach Region' },
+		{ icon: Zap, value: '25+', label: 'Global Industry Partners' },
+		{ icon: Award, value: '1st', label: 'Liquid Rocket in Alberta' }
+	];
 </script>
 
-<style>
-    :global(html) {
-        scroll-snap-type: y mandatory;
-        scroll-behavior: smooth;
-        overflow-y: scroll;
-        height: 100vh;
-    }
-    
-    :global(body) {
-        margin: 0;
-        padding: 0;
-    }
-    
-    .page {
-        height: 100vh;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-    }
-</style>
-
-
-<!-- Page 1: -->
-	<section class="page flex flex-col justify-center items-center text-center bg-cover bg-center bg-no-repeat" style="background-image: url('/BackgroundTest.jpg');">
-		<div class="bg-black/30 w-full h-full flex items-center justify-center">
-			<h1 class="text-5xl sm:text-7xl font-bold text-white mb-4">Bio Rocket</h1>
+<div class="bg-surface-900 text-white font-sans overflow-x-hidden">
+	<!-- HERO -->
+	<section class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+		<div
+			class="absolute inset-0 bg-cover bg-center scale-[1.04]"
+			style="background-image: url('/main-page-first-image.png');"
+		></div>
+		<div
+			class="absolute inset-0 bg-gradient-to-br from-black/75 via-black/45 to-primary-900/15 pointer-events-none"
+		></div>
+		<div class="relative z-10 text-center flex flex-col items-center gap-5">
+			<h1 class="flex flex-col gap-0 m-0">
+				<span class="block text-[clamp(3rem,9vw,8rem)] font-bold leading-[0.92] text-white">
+					WESTERN CANADA
+				</span>
+				<span class="block text-[clamp(3rem,9vw,8rem)] font-bold leading-[0.92] text-primary-500">
+					AEROSPACE
+				</span>
+			</h1>
+			<p class="text-xl text-white/80 m-0">Empowering the next generation of aerospace leaders</p>
 		</div>
 	</section>
 
-	<!-- Page 2: Vision -->
-	<section class="page flex flex-col justify-center items-center text-center bg-cover bg-center bg-no-repeat" style="background-image: url('/BackgroundTest.jpg');">
-		<div class="bg-black/30 w-full h-full flex items-center justify-center p-6">
-			<h2 class="text-4xl font-bold">Our Vision for the Future</h2>
-		</div>
-	</section>
+	<!-- RECRUITMENT -->
+	<section
+		class="relative bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 border-t border-primary-700/40 overflow-hidden h-screen flex items-center"
+	>
+		<div
+			class="absolute -top-20 -right-28 w-[500px] h-[700px] bg-gradient-to-br from-transparent via-transparent to-primary-900/10 -rotate-15 pointer-events-none"
+		></div>
+		<div
+			class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-12 py-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center w-full box-border"
+		>
+			<!-- LEFT -->
+			<div>
+				<h2 class="text-[clamp(3rem,6vw,5.5rem)] font-bold leading-tight text-white m-0 mb-7">
+					We Want<br />
+					<em class="not-italic text-primary-500">You.</em>
+				</h2>
+				<p class="text-base leading-7 text-white/65 m-0 mb-9 max-w-[480px]">
+					Are you looking to take your student aerospace project to the next level? WCAN provides
+					technical support, mentorship, and other growth opportunities to student-led projects
+					across Western Canada. Tell us about your mission through the contact form, and let's
+					explore how we can support your team!
+				</p>
+				<a
+					href="/get-involved"
+					data-sveltekit-preload-data
+					class="inline-flex items-center gap-2.5 px-5 py-2 bg-[var(--color-primary-700)] hover:bg-[var(--color-secondary-700)] text-white text-sm no-underline transition-all duration-200 ease-in-out"
+				>
+					<span>Get Involved</span>
+				</a>
+			</div>
 
-	<!-- Page 3: Recruitment -->
-	<section class="page flex flex-col justify-center items-center text-center bg-cover bg-center bg-no-repeat" style="background-image: url('/BackgroundTest.jpg');">
-		<div class="bg-black/30 w-full h-full flex items-center justify-center p-6">
-			<h3 class="text-2xl font-bold">We want you!</h3>
-		</div>
-	</section>
-
-	<!-- Page 4: Gallery -->
-	<section class="page flex flex-col bg-cover bg-center bg-no-repeat" style="background-image: url('/BackgroundTest.jpg');">
-		<div class="bg-black/30 w-full flex-1 flex flex-col justify-center items-center p-6">
-			<div class="w-full max-w-4xl mx-auto">
-				
-				<!-- Carousel Navigation -->
- 				<div class="card p-2 grid grid-cols-[auto_1fr_auto] gap-2 items-center">
-					
-					<!-- Button: Left -->
-					<button 
-						type="button" 
-						class={carouselArrowBtn}
-						onclick={carouselLeft}
-						title="Previous slide" 
-						aria-label="Previous slide"
+			<!-- RIGHT: stats -->
+			<div class="grid grid-cols-2 gap-[2px] bg-primary-700/40">
+				{#each stats as stat}
+					<div
+						class="bg-surface-900 p-9 flex flex-col gap-2.5 relative overflow-hidden transition-colors duration-200 before:absolute before:top-0 before:left-0 before:w-[3px] before:h-0 before:bg-primary-500 before:transition-[height] before:duration-300 before:ease-in-out hover:before:h-full hover:bg-surface-800"
 					>
-						<ArrowLeft size={16} />
-					</button>
-					
-					<!-- Carousel Images -->
-					<div 
-						bind:this={elemCarousel}
-						class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto gap-4 px-2"
-					>
-						{#each generatedArray as _, i}
-							<img
-								class="snap-center w-[640px] rounded-container flex-shrink-0"
-								src={`https://picsum.photos/seed/${i + 1}/640/480`}
-								alt={`full-${i}`}
-								loading="lazy"
-							/>
-						{/each}
+						<svelte:component this={stat.icon} size={22} class="text-primary-500" />
+						<div class="text-2xl font-semibold leading-none text-white">{stat.value}</div>
+						<div class="text-sm text-white/65">{stat.label}</div>
 					</div>
-					
-					<!-- Button: Right -->
-					<button 
-						type="button" 
-						class={carouselArrowBtn}
-						onclick={carouselRight}
-						title="Next slide" 
-						aria-label="Next slide"
-					>
-						<ArrowRight size={16} />
-					</button>
-				</div>
-				
-				<!-- Thumbnails -->
-				<div class="card p-4 grid grid-cols-6 gap-4 mt-4">
-					{#each generatedArray as _, i}
-						<button 
-							type="button" 
-							onclick={() => carouselThumbnail(i)}
-						>
-							<img
-								class="rounded-container hover:brightness-125"
-								src={`https://picsum.photos/seed/${i + 1}/256`}
-								alt={`thumb-${i}`}
-								loading="lazy"
-							/>
-						</button>
-					{/each}
-				</div>
+				{/each}
 			</div>
 		</div>
 	</section>
+
+	<!-- GALLERY -->
+	<section
+		class="bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 h-screen flex items-center"
+	>
+		<div class="max-w-[900px] mx-auto px-6 py-8 w-full box-border">
+			<div class="mb-10">
+				<h2 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white mt-2 mb-3.5">Our Work</h2>
+				<div class="w-[356px] h-[3px] bg-primary-500"></div>
+			</div>
+
+			<div class="grid grid-cols-[auto_1fr_auto]">
+				<button
+					type="button"
+					class="bg-surface-900 border-none text-white cursor-pointer px-[18px] flex items-center justify-center min-h-[60px] transition-colors duration-200 hover:bg-primary-500"
+					onclick={carouselLeft}
+					aria-label="Previous slide"
+				>
+					<ArrowLeft size={20} />
+				</button>
+
+				<div
+					bind:this={elemCarousel}
+					class="flex overflow-x-hidden aspect-video snap-x snap-mandatory scroll-smooth"
+				>
+					{#each generatedArray as _, i}
+						<img
+							class="flex-shrink-0 w-full object-cover snap-center"
+							src={`/gallery/image-${i + 1}.JPG`}
+							alt={`Gallery image ${i + 1}`}
+						/>
+					{/each}
+				</div>
+
+				<button
+					type="button"
+					class="bg-surface-900 border-none text-white cursor-pointer px-[18px] flex items-center justify-center min-h-[60px] transition-colors duration-200 hover:bg-primary-500"
+					onclick={carouselRight}
+					aria-label="Next slide"
+				>
+					<ArrowRight size={20} />
+				</button>
+			</div>
+
+			<div class="grid grid-cols-7 gap-[2px] mt-[2px]">
+				{#each generatedArray as _, i}
+					<button
+						type="button"
+						class="bg-transparent border-none p-0 cursor-pointer overflow-hidden aspect-square block group"
+						onclick={() => carouselThumbnail(i)}
+						aria-label={`Go to slide ${i + 1}`}
+					>
+						<img
+							class="w-full h-full object-cover block opacity-55 transition-opacity duration-200 group-hover:opacity-100 group-hover:outline group-hover:outline-2 group-hover:outline-primary-500 group-hover:-outline-offset-2"
+							src={`/gallery/image-${i + 1}.JPG`}
+							alt={`Thumbnail ${i + 1}`}
+							loading="lazy"
+						/>
+					</button>
+				{/each}
+			</div>
+		</div>
+	</section>
+</div>
+
+<style>
+	.scroll-smooth {
+		scroll-behavior: smooth;
+	}
+</style>
