@@ -4,6 +4,7 @@
         import { MenuIcon, Instagram, Linkedin, Youtube, Github } from '@lucide/svelte';
         import { page } from '$app/stores';
         import { Menu, Portal } from '@skeletonlabs/skeleton-svelte';
+		
 
         const { children } = $props();
 
@@ -17,7 +18,7 @@
 
         const projectLinks = [
                 { label: 'Proteus', href: '/projects/proteus' },
-                { label: 'Test Stand', href: '/projects/test-stand' }
+                // { label: 'Test Stand', href: '/projects/test-stand' }
         ];
 
         // =========================
