@@ -15,25 +15,21 @@
 	const YOUTUBE_URL = 'https://www.youtube.com/@BioRocket-yyc';
 	const INSTAGRAM_URL = 'https://www.instagram.com/biorocketuofc/';
 
-	const projectLinks = [
-		{ label: 'Proteus', href: '/projects/proteus' },
-		// { label: 'Test Stand', href: '/projects/test-stand' }
-	];
+        // const projectLinks = [
+        //         { label: 'Proteus', href: '/projects/proteus' },
+        //         // { label: 'Test Stand', href: '/projects/test-stand' }
+        // ];
 
-	// =========================
-	// NAVIGATION BAR
-	// =========================
-	const navLinks = [
-		{ label: 'Home', href: '/' },
-		{ label: 'About', href: '/about' },
-		{
-			label: 'Projects',
-			dropdown: projectLinks,
-		},
-		{ label: 'Sponsors', href: '/sponsors' },
-		// { label: 'Blog', href: '/blog' },
-		{ label: 'Get Involved', href: '/get-involved' },
-	];
+        // =========================
+        // NAVIGATION BAR
+        // =========================
+        const navLinks = [
+			{ label: 'Home', href: '/' },
+			{ label: 'About', href: '/about' },
+			{ label: 'Projects', href: '/projects/proteus' },
+			{ label: 'Sponsors', href: '/sponsors' },
+			{ label: 'Get Involved', href: '/get-involved' }
+		];
 
 	const socialBtn =
 		'btn-icon !w-[44px] !h-[44px] !p-0 flex items-center justify-center text-[--base-font-color] hover:text-[var(--color-success-500)] hover:bg-[var(--color-surface-600)] rounded-lg';
@@ -131,7 +127,7 @@
 		<div class="flex items-center w-full relative">
 			<!-- Left: Text -->
 			<p class="text-xs xs:text-base">
-				&copy; {new Date().getFullYear()} BioRocket. All rights reserved.
+				&copy; {new Date().getFullYear()} Western Canada Aerospace Initiative. All rights reserved.
 			</p>
 
 			<!-- Center: Social icons -->

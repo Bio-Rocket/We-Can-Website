@@ -1,30 +1,11 @@
 <script>
-	const teamMembers = [
-		{
-			name: 'Lukas Kobler',
-			role: 'Project Manager',
-			bio: 'Lukas is studying mechanical engineering at the University of Calgary and has been developing rocket propulsion systems for SOAR for over 5 years and led the development of Dracarys I, the most powerful hybrid rocket motor ever flown, in Alberta.',
-			image: '/aboutPage/lukas profile picture.jpg',
-		},
-
-		{
-			name: 'Jayden Sorensen',
-			role: 'Controls Lead',
-			bio: 'After 3 years with SOAR and 24 months of aerospace and research internship experience, Jayden is ready to design, integrate, and test systems for data acquisition and analysis, communication, controls, and much more.',
-			image: '/aboutPage/jayden.CSSQOCL8.png',
-		},
-
-		{
-			name: 'Jesse Gerbrandt',
-			role: 'Software Lead',
-			bio: 'With 2 years of avionics experience on SOAR, Jesse has developed flight and safety-critical software, excelling in embedded systems, communication, and GUI programming, ensuring performance and reliability.',
-			image: '/aboutPage/jesse.lLHeNc30.png',
-		},
-	];
+	let { data } = $props();
+	let teamMembers = data.teamMembers;
+	let teamPhoto = data.teamPhoto
 </script>
 
 <div
-	class="relative bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 border-t border-primary-700/40 overflow-hidden min-h-screen flex items-start"
+	class="relative bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 overflow-hidden min-h-screen flex items-start"
 	style="padding-top: 64px;"
 >
 	<div
@@ -39,11 +20,11 @@
 				<div class="w-[416px] h-[3px] bg-primary-500"></div>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-primary-700/40">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-[2px]">
 				<!-- Banner Image -->
 				<div class="bg-surface-900 overflow-hidden relative min-h-[380px]">
 					<img
-						src="/aboutPage/biorocket winning team photo.jpg"
+						src={teamPhoto}
 						alt="Biorocket winning team"
 						class="absolute inset-0 w-full h-full object-cover block"
 					/>
@@ -85,10 +66,10 @@
 						<div
 							class="relative w-48 h-48 overflow-hidden rounded-full shadow-xl transition-transform duration-300 group-hover:scale-105"
 						>
-							{#if member.image}
+							{#if member.image_url}
 								<div
 									class="w-full h-full bg-cover bg-center"
-									style="background-image: url('{member.image}');"
+									style="background-image: url('{member.image_url}');"
 								></div>
 							{:else}
 								<div class="w-full h-full bg-surface-700 flex items-center justify-center">
@@ -120,14 +101,14 @@
 						</div>
 
 						<!-- Hover Bio -->
-						{#if member.bio}
+						<!-- {#if member.bio}
 							<div
 								class="absolute top-1/2 left-full transform -translate-y-1/2 ml-2 w-64 p-4 bg-surface-900 text-white/80 text-sm leading-relaxed border border-primary-500/60 shadow-lg opacity-0 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-2 z-10
 								[.right-side_&]:left-auto [.right-side_&]:right-full [.right-side_&]:ml-0 [.right-side_&]:mr-2 [.right-side_&]:-translate-x-2"
 							>
 								{member.bio}
 							</div>
-						{/if}
+						{/if} -->
 					</div>
 				{/each}
 			</div>
