@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Dialog, Portal } from '@skeletonlabs/skeleton-svelte';
+	import { enhance } from '$app/forms';
+	let { form } = $props();
 </script>
 
 <div
@@ -9,11 +10,9 @@
 	<!-- Decorative gradient blob -->
 	<div
 		class="absolute -top-20 -right-28 w-[300px] md:w-[500px] h-[700px] bg-gradient-to-br from-transparent via-transparent to-primary-900/10 -rotate-15 pointer-events-none"
-		
 	></div>
 
 	<div class="relative z-10 max-w-[1200px] mx-auto px-4 md:px-12 py-8 md:py-10 w-full box-border">
-
 		<!-- Heading -->
 		<div class="mb-10">
 			<h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white mt-2 mb-3.5">Get Involved</h1>
@@ -21,17 +20,15 @@
 		</div>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-primary-700/40">
-
 			<!-- Left Side -->
 			<div class="bg-surface-900 p-5 md:p-9 flex flex-col gap-8 justify-between">
-
 				<div class="flex flex-col gap-8">
 					<!-- Join Our Team -->
 					<div
 						class="flex flex-col gap-4 relative overflow-hidden transition-colors duration-200
-						       before:absolute before:top-0 before:left-0 before:w-[3px] before:h-0 before:bg-primary-500
-						       before:transition-[height] before:duration-300 before:ease-in-out
-						       hover:before:h-full hover:bg-surface-800 p-4 -m-4"
+						before:absolute before:top-0 before:left-0 before:w-[3px] before:h-0 before:bg-primary-500
+						before:transition-[height] before:duration-300 before:ease-in-out
+						hover:before:h-full hover:bg-surface-800 p-4 -m-4"
 					>
 						<h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-white">Join our Team!</h2>
 						<p class="text-base leading-7 text-white/80">
@@ -55,9 +52,9 @@
 					<!-- Sponsor Us -->
 					<div
 						class="flex flex-col gap-4 relative overflow-hidden transition-colors duration-200
-						       before:absolute before:top-0 before:left-0 before:w-[3px] before:h-0 before:bg-primary-500
-						       before:transition-[height] before:duration-300 before:ease-in-out
-						       hover:before:h-full hover:bg-surface-800 p-4 -m-4"
+						before:absolute before:top-0 before:left-0 before:w-[3px] before:h-0 before:bg-primary-500
+						before:transition-[height] before:duration-300 before:ease-in-out
+						hover:before:h-full hover:bg-surface-800 p-4 -m-4"
 					>
 						<h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-white">Sponsor Us</h2>
 						<p class="text-base leading-7 text-white/80">
@@ -78,12 +75,12 @@
 				>
 					Sponsorship Package
 				</button>
-
 			</div>
 
 			<!-- Right Side — Contact Form -->
-			<div class="bg-surface-900 p-5 md:p-9 flex flex-col justify-between gap-6">
-				<div class="flex flex-col gap-4">
+			<div class="bg-surface-900 p-5 md:p-9 flex flex-col gap-6 min-h-full">
+				<!-- Top content grows -->
+				<div class="flex flex-col gap-4 flex-1">
 					<div class="flex flex-col gap-4">
 						<h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-white">Work with Us!</h2>
 						<p class="text-base leading-7 text-white/80">
@@ -94,74 +91,74 @@
 						</p>
 					</div>
 
-					<form class="w-full space-y-4">
-						<!-- Name -->
+					{#if form?.error}
+						<p class="text-sm text-red-300 bg-red-950/40 border border-red-500/30 p-3">
+							{form.error}
+						</p>
+					{/if}
+					{#if form?.success}
+						<p class="text-sm text-green-300 bg-green-950/40 border border-green-500/30 p-3">
+							Your form has been submitted successfully. We'll get back to you soon!
+						</p>
+					{/if}
+
+					<form id="contactForm" method="POST" use:enhance class="w-full space-y-4">
+						<!-- Honeypot -->
+						<input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
+
 						<label class="flex flex-col gap-1">
 							<span class="text-sm text-white/50 uppercase tracking-widest">Name</span>
 							<input
 								class="bg-surface-800 border border-primary-700/40 text-white text-sm px-4 py-2 outline-none focus:border-primary-500 transition-colors duration-200 rounded-none w-full"
 								type="text"
+								name="name"
 								placeholder="Your Name"
+								required
 							/>
 						</label>
 
-						<!-- Email -->
 						<label class="flex flex-col gap-1">
 							<span class="text-sm text-white/50 uppercase tracking-widest">Email</span>
 							<input
 								class="bg-surface-800 border border-primary-700/40 text-white text-sm px-4 py-2 outline-none focus:border-primary-500 transition-colors duration-200 rounded-none w-full"
 								type="email"
+								name="email"
 								placeholder="Your Email Address"
+								required
 							/>
 						</label>
 
-						<!-- Phone -->
 						<label class="flex flex-col gap-1">
 							<span class="text-sm text-white/50 uppercase tracking-widest">Phone Number</span>
 							<input
 								class="bg-surface-800 border border-primary-700/40 text-white text-sm px-4 py-2 outline-none focus:border-primary-500 transition-colors duration-200 rounded-none w-full"
 								type="tel"
+								name="phone"
 								placeholder="Your Phone Number"
 							/>
 						</label>
 
-						<!-- Message -->
 						<label class="flex flex-col gap-1">
 							<span class="text-sm text-white/50 uppercase tracking-widest">Message</span>
 							<textarea
 								class="bg-surface-800 border border-primary-700/40 text-white text-sm px-4 py-2 outline-none focus:border-primary-500 transition-colors duration-200 rounded-none w-full resize-none"
 								rows="5"
+								name="message"
 								placeholder="Your Message"
+								required
 							></textarea>
 						</label>
 					</form>
 				</div>
 
-				<!-- Submit -->
-				<Dialog closeOnInteractOutside={false}>
-					<Dialog.Trigger
-						class="bg-primary-700 hover:bg-primary-600 text-white text-sm px-5 py-2 w-full transition-colors duration-200"
-					>
-						Submit
-					</Dialog.Trigger>
-					<Portal>
-						<Dialog.Backdrop class="fixed inset-0 z-50 bg-black/60" />
-						<Dialog.Positioner class="fixed inset-0 z-50 flex justify-center items-center p-4">
-							<Dialog.Content class="bg-surface-900 border border-primary-700/40 w-full max-w-md p-6 md:p-8 shadow-xl space-y-4">
-								<Dialog.Title class="text-2xl font-bold text-white">Thank You</Dialog.Title>
-								<Dialog.Description class="text-white/70 leading-7">
-									Your form has been submitted successfully. We'll get back to you soon!
-								</Dialog.Description>
-								<Dialog.CloseTrigger
-									class="bg-primary-700 hover:bg-primary-600 text-white text-sm px-5 py-2 transition-colors duration-200"
-								>
-									Close
-								</Dialog.CloseTrigger>
-							</Dialog.Content>
-						</Dialog.Positioner>
-					</Portal>
-				</Dialog>
-
+				<!-- Bottom pinned -->
+				<button
+					type="submit"
+					form="contactForm"
+					class="bg-primary-700 hover:bg-primary-600 text-white text-sm px-5 py-2 w-full transition-colors duration-200"
+				>
+					Submit
+				</button>
 			</div>
 		</div>
 	</div>
