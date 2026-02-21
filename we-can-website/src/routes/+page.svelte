@@ -50,7 +50,7 @@
 		{ icon: Users, value: '100+', label: 'Students Impacted' },
 		{ icon: Globe, value: 'W. Canada', label: 'Outreach Region' },
 		{ icon: Zap, value: '25+', label: 'Global Industry Partners' },
-		{ icon: Award, value: '1st', label: 'Liquid Rocket in Alberta' }
+		{ icon: Award, value: '1st', label: 'Liquid Rocket in Alberta' },
 	];
 </script>
 
@@ -71,7 +71,9 @@
 				>
 					WESTERN <span class="text-red-500">CANADA</span>
 				</span>
-				<span class="block text-[clamp(3rem,9vw,6.75em)] font-bold leading-[0.92] tracking-[0.0002em]">
+				<span
+					class="block text-[clamp(3rem,9vw,6.75em)] font-bold leading-[0.92] tracking-[0.0002em]"
+				>
 					AEROSPACE INITIATIVE
 				</span>
 			</h1>

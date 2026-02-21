@@ -4,22 +4,22 @@
 			name: 'Lukas Kobler',
 			role: 'Project Manager',
 			bio: 'Lukas is studying mechanical engineering at the University of Calgary and has been developing rocket propulsion systems for SOAR for over 5 years and led the development of Dracarys I, the most powerful hybrid rocket motor ever flown, in Alberta.',
-			image: '/aboutPage/lukas profile picture.jpg'
+			image: '/aboutPage/lukas profile picture.jpg',
 		},
 
 		{
 			name: 'Jayden Sorensen',
 			role: 'Controls Lead',
 			bio: 'After 3 years with SOAR and 24 months of aerospace and research internship experience, Jayden is ready to design, integrate, and test systems for data acquisition and analysis, communication, controls, and much more.',
-			image: '/aboutPage/jayden.CSSQOCL8.png'
+			image: '/aboutPage/jayden.CSSQOCL8.png',
 		},
 
 		{
 			name: 'Jesse Gerbrandt',
 			role: 'Software Lead',
 			bio: 'With 2 years of avionics experience on SOAR, Jesse has developed flight and safety-critical software, excelling in embedded systems, communication, and GUI programming, ensuring performance and reliability.',
-			image: '/aboutPage/jesse.lLHeNc30.png'
-		}
+			image: '/aboutPage/jesse.lLHeNc30.png',
+		},
 	];
 </script>
 

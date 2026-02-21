@@ -1,53 +1,52 @@
 <script lang="ts">
-        import './layout.css';
-        import { AppBar } from '@skeletonlabs/skeleton-svelte';
-        import { MenuIcon, Instagram, Linkedin, Youtube, Github } from '@lucide/svelte';
-        import { page } from '$app/stores';
-        import { Menu, Portal } from '@skeletonlabs/skeleton-svelte';
-		
+	import './layout.css';
+	import { AppBar } from '@skeletonlabs/skeleton-svelte';
+	import { MenuIcon, Instagram, Linkedin, Youtube, Github } from '@lucide/svelte';
+	import { page } from '$app/stores';
+	import { Menu, Portal } from '@skeletonlabs/skeleton-svelte';
 
-        const { children } = $props();
+	const { children } = $props();
 
-        // =========================
-        // SOCIAL MEDIA LINKS
-        // =========================
-        const LINKEDIN_URL = 'https://www.linkedin.com/company/biorocket/';
-        const GITHUB_URL = 'https://github.com/Bio-Rocket';
-        const YOUTUBE_URL = 'https://www.youtube.com/@BioRocket-yyc';
-        const INSTAGRAM_URL = 'https://www.instagram.com/biorocketuofc/';
+	// =========================
+	// SOCIAL MEDIA LINKS
+	// =========================
+	const LINKEDIN_URL = 'https://www.linkedin.com/company/biorocket/';
+	const GITHUB_URL = 'https://github.com/Bio-Rocket';
+	const YOUTUBE_URL = 'https://www.youtube.com/@BioRocket-yyc';
+	const INSTAGRAM_URL = 'https://www.instagram.com/biorocketuofc/';
 
-        const projectLinks = [
-                { label: 'Proteus', href: '/projects/proteus' },
-                // { label: 'Test Stand', href: '/projects/test-stand' }
-        ];
+	const projectLinks = [
+		{ label: 'Proteus', href: '/projects/proteus' },
+		// { label: 'Test Stand', href: '/projects/test-stand' }
+	];
 
-        // =========================
-        // NAVIGATION BAR
-        // =========================
-        const navLinks = [
-                { label: 'Home', href: '/' },
-                { label: 'About', href: '/about' },
-                {
-                        label: 'Projects',
-                        dropdown: projectLinks
-                },
-                { label: 'Sponsors', href: '/sponsors' },
-                // { label: 'Blog', href: '/blog' },
-                { label: 'Get Involved', href: '/get-involved' }
-        ];
+	// =========================
+	// NAVIGATION BAR
+	// =========================
+	const navLinks = [
+		{ label: 'Home', href: '/' },
+		{ label: 'About', href: '/about' },
+		{
+			label: 'Projects',
+			dropdown: projectLinks,
+		},
+		{ label: 'Sponsors', href: '/sponsors' },
+		// { label: 'Blog', href: '/blog' },
+		{ label: 'Get Involved', href: '/get-involved' },
+	];
 
-        const socialBtn =
-                'btn-icon !w-[44px] !h-[44px] !p-0 flex items-center justify-center text-[--base-font-color] hover:text-[var(--color-success-500)] hover:bg-[var(--color-surface-600)] rounded-lg';
-        const socialIcon = '!w-6 !h-6';
-        const socailBtnFtr =
-                'btn-icon !w-[20px] !h-[20px] flex items-center justify-center text-[--base-font-color] hover:text-[var(--color-success-500)] hover:bg-[var(--color-surface-600)] rounded-md';
-        const baseNavLink =
-                'px-3 py-2 text-sm font-medium text-[--base-font-color] transition-colors hover:text-[var(--color-success-500)] hover:bg-[var(--color-surface-600)] rounded-lg';
-        const activeNavLink = 'text-primary-500';                                                                                                                                      
-		const inactiveNavLink = 'text-surface-600-200';
+	const socialBtn =
+		'btn-icon !w-[44px] !h-[44px] !p-0 flex items-center justify-center text-[--base-font-color] hover:text-[var(--color-success-500)] hover:bg-[var(--color-surface-600)] rounded-lg';
+	const socialIcon = '!w-6 !h-6';
+	const socailBtnFtr =
+		'btn-icon !w-[20px] !h-[20px] flex items-center justify-center text-[--base-font-color] hover:text-[var(--color-success-500)] hover:bg-[var(--color-surface-600)] rounded-md';
+	const baseNavLink =
+		'px-3 py-2 text-sm font-medium text-[--base-font-color] transition-colors hover:text-[var(--color-success-500)] hover:bg-[var(--color-surface-600)] rounded-lg';
+	const activeNavLink = 'text-primary-500';
+	const inactiveNavLink = 'text-surface-600-200';
 </script>
 
-<div class="bg-[var(--color-background)] text-[var(--color-text)] ">
+<div class="bg-[var(--color-background)] text-[var(--color-text)]">
 	<!-- =========================
     HEADER / NAVIGATION BAR
      ========================= -->
@@ -127,8 +126,8 @@
     FOOTER
     ========================= -->
 	<footer
-        class="h-10 bg-[var(--color-surface-500)] text-[var(--color-text)] py-2 px-6 shadow-inner flex flex-col justify-center"
-    >
+		class="h-10 bg-[var(--color-surface-500)] text-[var(--color-text)] py-2 px-6 shadow-inner flex flex-col justify-center"
+	>
 		<div class="flex items-center w-full relative">
 			<!-- Left: Text -->
 			<p class="text-xs xs:text-base">

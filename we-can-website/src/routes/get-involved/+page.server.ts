@@ -5,10 +5,7 @@ import { env } from '$env/dynamic/private';
 import { env as publicEnv } from '$env/dynamic/public';
 import { Resend } from 'resend';
 
-const supabase = createClient(
-	publicEnv.PUBLIC_SUPABASE_URL,
-	env.SUPABASE_SECRET_KEY
-);
+const supabase = createClient(publicEnv.PUBLIC_SUPABASE_URL, env.SUPABASE_SECRET_KEY);
 
 const resend = new Resend(env.RESEND_API_KEY);
 
@@ -32,20 +29,20 @@ export const actions: Actions = {
 			.insert([{ name, email, phone, message }]);
 
 		if (dbError) {
-            console.error('Supabase insert error:', dbError);
-            return fail(500, { error: `Could not save submission: ${dbError.message}` });
-        }
+			console.error('Supabase insert error:', dbError);
+			return fail(500, { error: `Could not save submission: ${dbError.message}` });
+		}
 
 		const { error: mailError } = await resend.emails.send({
 			from: 'WCAN <info@wcan-aero.ca>',
 			to: [env.CONTACT_TO_EMAIL],
 			subject: `New Get Involved form: ${name}`,
 			replyTo: email,
-			text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`
+			text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`,
 		});
 
 		if (mailError) return fail(502, { error: 'Saved, but email failed to send.' });
 
 		return { success: true };
-	}
+	},
 };
