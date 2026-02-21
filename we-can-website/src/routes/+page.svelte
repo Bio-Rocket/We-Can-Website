@@ -1,24 +1,22 @@
 <script lang="ts">
 	import {
-		Instagram,
-		Linkedin,
-		Youtube,
-		Github,
 		ArrowLeft,
 		ArrowRight,
-		ChevronDown,
 		Zap,
 		Globe,
 		Users,
-		Award,
+		Award
 	} from '@lucide/svelte';
+	
 
 	const LINKEDIN_URL = 'https://www.linkedin.com/company/biorocket/';
 	const GITHUB_URL = 'https://github.com/Bio-Rocket';
 	const YOUTUBE_URL = 'https://www.youtube.com/@BioRocket-yyc';
 	const INSTAGRAM_URL = 'https://www.instagram.com/biorocketuofc/';
 
-	const generatedArray = Array.from({ length: 7 });
+	let { data } = $props();
+	let galleryImages = data.galleryImages;
+	let homePageImage = data.homePageImage;
 	let elemCarousel: HTMLDivElement | null = null;
 
 	function carouselLeft() {
@@ -48,8 +46,8 @@
 
 	const stats = [
 		{ icon: Users, value: '100+', label: 'Students Impacted' },
-		{ icon: Globe, value: 'W. Canada', label: 'Outreach Region' },
-		{ icon: Zap, value: '25+', label: 'Global Industry Partners' },
+		{ icon: Globe, value: 'Outreach', label: 'Across Western Canada' },
+		{ icon: Globe, value: '25+', label: 'Global Industry Partners' },
 		{ icon: Award, value: '1st', label: 'Liquid Rocket in Alberta' }
 	];
 </script>
@@ -59,7 +57,7 @@
 	<section class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
 		<div
 			class="absolute inset-0 bg-cover bg-center scale-[1.04]"
-			style="background-image: url('/main-page-first-image.png');"
+			style="background-image: url('{homePageImage}');"
 		></div>
 		<div
 			class="absolute inset-0 bg-gradient-to-br from-black/75 via-black/45 to-primary-900/15 pointer-events-none"
@@ -69,9 +67,11 @@
 				<span
 					class="block text-[clamp(3rem,9vw,7.5rem)] font-bold leading-[0.92] text-white tracking-[0.05em]"
 				>
-					WESTERN <span class="text-red-500">CANADA</span>
+					WESTERN <span class="text-tertiary-500">CANADA</span>
 				</span>
-				<span class="block text-[clamp(3rem,9vw,6.75em)] font-bold leading-[0.92] tracking-[0.0002em]">
+				<span
+					class="block text-[clamp(3rem,9vw,6.75em)] font-bold leading-[0.92] tracking-[0.0002em]"
+				>
 					AEROSPACE INITIATIVE
 				</span>
 			</h1>
@@ -93,7 +93,7 @@
 			<div>
 				<h2 class="text-[clamp(3rem,6vw,5.5rem)] font-bold leading-tight text-white m-0 mb-7">
 					We Want<br />
-					<em class="not-italic text-primary-500">You.</em>
+					<em class="not-italic text-tertiary-500">You.</em>
 				</h2>
 				<p class="text-base leading-7 text-white/65 m-0 mb-9 max-w-[480px]">
 					Are you looking to take your student aerospace project to the next level? WCAN provides
@@ -149,10 +149,10 @@
 					bind:this={elemCarousel}
 					class="flex overflow-x-hidden aspect-video snap-x snap-mandatory scroll-smooth"
 				>
-					{#each generatedArray as _, i}
+					{#each galleryImages as url, i}
 						<img
 							class="flex-shrink-0 w-full object-cover snap-center"
-							src={`/gallery/image-${i + 1}.JPG`}
+							src={url}
 							alt={`Gallery image ${i + 1}`}
 						/>
 					{/each}
@@ -168,8 +168,11 @@
 				</button>
 			</div>
 
-			<div class="grid grid-cols-7 gap-[2px] mt-[2px]">
-				{#each generatedArray as _, i}
+			<div
+				class="grid gap-[2px] mt-[2px]"
+				style="grid-template-columns: repeat({galleryImages.length}, 1fr)"
+			>
+				{#each galleryImages as url, i}
 					<button
 						type="button"
 						class="bg-transparent border-none p-0 cursor-pointer overflow-hidden aspect-square block group"
@@ -178,7 +181,7 @@
 					>
 						<img
 							class="w-full h-full object-cover block opacity-55 transition-opacity duration-200 group-hover:opacity-100 group-hover:outline group-hover:outline-2 group-hover:outline-primary-500 group-hover:-outline-offset-2"
-							src={`/gallery/image-${i + 1}.JPG`}
+							src={url}
 							alt={`Thumbnail ${i + 1}`}
 							loading="lazy"
 						/>
