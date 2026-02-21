@@ -4,7 +4,7 @@ import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_PUBLISHABLE_KEY } from '$env/stati
 
 export const load: PageServerLoad = async ({ fetch }) => {
 	const supabase = createClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_PUBLISHABLE_KEY, {
-		global: { fetch }
+		global: { fetch },
 	});
 
 	const { data, error } = await supabase

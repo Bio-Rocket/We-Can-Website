@@ -32,11 +32,11 @@
 					>
 						<h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-white">Join our Team!</h2>
 						<p class="text-base leading-7 text-white/80">
-							Join the mission to elevate Western Canada's aerospace sector. Whether you are a student
-							seeking hands-on experience or a seasoned professional looking to mentor and advise, we
-							welcome passionate individuals across all disciplines — from technical development to
-							business operations. Fill out the contact form and we'll be in touch with the next steps
-							for your application!
+							Join the mission to elevate Western Canada's aerospace sector. Whether you are a
+							student seeking hands-on experience or a seasoned professional looking to mentor and
+							advise, we welcome passionate individuals across all disciplines — from technical
+							development to business operations. Fill out the contact form and we'll be in touch
+							with the next steps for your application!
 						</p>
 						<button
 							type="button"
@@ -59,11 +59,11 @@
 						<h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-white">Sponsor Us</h2>
 						<p class="text-base leading-7 text-white/80">
 							Join our growing network of global industry partners! Your support provides critical
-							resources for students to bridge the gap between academic knowledge and applied aerospace
-							development. By partnering with us, you help to empower the next generation of aerospace
-							leaders, gain access to top talent, and promote your organization to a broad network of
-							innovators. View our sponsorship package for more information, or fill out our contact
-							form to get started.
+							resources for students to bridge the gap between academic knowledge and applied
+							aerospace development. By partnering with us, you help to empower the next generation
+							of aerospace leaders, gain access to top talent, and promote your organization to a
+							broad network of innovators. View our sponsorship package for more information, or
+							fill out our contact form to get started.
 						</p>
 					</div>
 				</div>
@@ -84,10 +84,10 @@
 					<div class="flex flex-col gap-4">
 						<h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-white">Work with Us!</h2>
 						<p class="text-base leading-7 text-white/80">
-							Are you looking to take your student aerospace project to the next level? WCAN provides
-							technical support, mentorship, and other growth opportunities to student-led projects
-							across Western Canada. Tell us about your mission and let's explore how we can support
-							your team!
+							Are you looking to take your student aerospace project to the next level? WCAN
+							provides technical support, mentorship, and other growth opportunities to student-led
+							projects across Western Canada. Tell us about your mission and let's explore how we
+							can support your team!
 						</p>
 					</div>
 
