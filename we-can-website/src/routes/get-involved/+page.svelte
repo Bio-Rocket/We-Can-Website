@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { Dialog, Portal } from '@skeletonlabs/skeleton-svelte';
-	import { FileIcon } from '@lucide/svelte';
-	import { FileUpload } from '@skeletonlabs/skeleton-svelte';
+	import { enhance } from '$app/forms';
+	let { form } = $props();
 </script>
 
 <div class="page min-h-screen bg-[var(--color-background)] bg-center bg-no-repeat">
@@ -70,21 +69,43 @@
 								student-led projects across Western Canada. Tell us about your mission through the
 								contact form, and let's explore how we can support your team!
 							</p>
-							<form class="mx-auto w-full space-y-2">
+
+							{#if form?.error}
+								<p class="text-sm text-red-700 bg-red-100 p-2">{form.error}</p>
+							{/if}
+							{#if form?.success}
+								<p class="text-sm text-green-700 bg-green-100 p-2">
+									Your form has been submitted successfully. We'll get back to you soon!
+								</p>
+							{/if}
+
+							<form method="POST" use:enhance class="mx-auto w-full space-y-2">
+								<input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
+
 								<!-- Name -->
 								<label class="label">
 									<span class="label-text text-base text-[var(--color-secondary-950)]">Name</span>
-									<input class="input text-sm rounded-none" type="text" placeholder="Name" />
+									<input
+										class="input text-sm rounded-none"
+										type="text"
+										name="name"
+										placeholder="Name"
+										required
+									/>
 								</label>
+
 								<!-- Email -->
 								<label class="label">
 									<span class="label-text text-base text-[var(--color-secondary-950)]">Email</span>
 									<input
 										class="input text-sm rounded-none"
-										type="text"
+										type="email"
+										name="email"
 										placeholder="Email Address"
+										required
 									/>
 								</label>
+
 								<!-- Phone Number -->
 								<label class="label">
 									<span class="label-text text-base text-[var(--color-secondary-950)]"
@@ -93,43 +114,32 @@
 									<input
 										class="input text-sm rounded-none"
 										type="text"
+										name="phone"
 										placeholder="Your Phone Number"
 									/>
 								</label>
+
 								<!-- Message -->
 								<label class="label">
-									<span class="label-text text-base text-[var(--color-secondary-950)]">Message</span
-									>
+									<span class="label-text text-base text-[var(--color-secondary-950)]">Message</span>
 									<textarea
 										class="textarea input text-sm rounded-none"
 										rows="5"
+										name="message"
 										placeholder="Your Message"
+										required
 									></textarea>
 								</label>
+
+								<button
+									type="submit"
+									class="bg-[var(--color-primary-700)] hover:bg-[var(--color-secondary-700)] text-sm text-white px-5 py-2 w-full rounded-none"
+								>
+									Submit
+								</button>
 							</form>
 						</div>
 					</div>
-
-					<!-- Submit Button -->
-					<Dialog closeOnInteractOutside={false}>
-						<Dialog.Trigger
-							class="bg-[var(--color-primary-700)] hover:bg-[var(--color-secondary-700)] text-sm text-white px-5 py-2 w-full rounded-none"
-						>
-							Submit
-						</Dialog.Trigger>
-						<Portal>
-							<Dialog.Backdrop class="fixed inset-0 z-50 bg-surface-50-950/50" />
-							<Dialog.Positioner class="fixed inset-0 z-50 flex justify-center items-center">
-								<Dialog.Content class="card bg-surface-100-900 w-md p-4 space-y-2 shadow-xl">
-									<Dialog.Title class="text-2xl font-bold">Thanks You</Dialog.Title>
-									<Dialog.Description>
-										Your form has been submitted successfully. We'll get back to you soon!
-									</Dialog.Description>
-									<Dialog.CloseTrigger class="btn preset-tonal">Close</Dialog.CloseTrigger>
-								</Dialog.Content>
-							</Dialog.Positioner>
-						</Portal>
-					</Dialog>
 				</div>
 			</div>
 		</div>
