@@ -10,7 +10,7 @@
 		Zap,
 		Globe,
 		Users,
-		Award
+		Award,
 	} from '@lucide/svelte';
 
 	const LINKEDIN_URL = 'https://www.linkedin.com/company/biorocket/';
@@ -66,14 +66,16 @@
 		></div>
 		<div class="relative z-10 text-center flex flex-col items-center gap-5">
 			<h1 class="flex flex-col gap-0 m-0">
-				<span class="block text-[clamp(3rem,9vw,8rem)] font-bold leading-[0.92] text-white">
-					WESTERN CANADA
+				<span
+					class="block text-[clamp(3rem,9vw,7.5rem)] font-bold leading-[0.92] text-white tracking-[0.05em]"
+				>
+					WESTERN <span class="text-red-500">CANADA</span>
 				</span>
-				<span class="block text-[clamp(3rem,9vw,8rem)] font-bold leading-[0.92] text-primary-500">
-					AEROSPACE
+				<span class="block text-[clamp(3rem,9vw,6.75em)] font-bold leading-[0.92] tracking-[0.0002em]">
+					AEROSPACE INITIATIVE
 				</span>
 			</h1>
-			<p class="text-xl text-white/80 m-0">Empowering the next generation of aerospace leaders</p>
+			<p class="text-4xl text-white/80 m-0">Empowering the next generation of aerospace leaders</p>
 		</div>
 	</section>
 
