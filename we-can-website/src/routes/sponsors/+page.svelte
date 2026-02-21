@@ -126,22 +126,11 @@
 								target={href ? '_blank' : undefined}
 								rel={href ? 'noopener' : undefined}
 								aria-label={s.name}
-								class:list={{
-									'sponsor-tile': true,
-									'h-full': true,
-									'bg-surface-900': true,
-									[meta.padClass]: true,
-									'no-underline': true,
-									border: true,
-									'border-primary-700/40': true,
-									flex: true,
-									'flex-col': true,
-									relative: true,
-									'overflow-hidden': true,
-									'transition-colors': true,
-									'duration-200': true,
-									'hover:bg-surface-800': true,
-								}}
+                                class={`sponsor-tile group h-full bg-surface-900 ${meta.padClass} no-underline
+                                    border border-primary-700/40
+                                    flex flex-col
+                                    relative overflow-hidden transition-colors duration-200
+                                    hover:bg-surface-800`}
 							>
 								<div class="logo-pad">
 									<div class="logo-box" style={`height:${meta.logoClamp};`}>
