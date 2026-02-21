@@ -41,7 +41,7 @@ export const actions: Actions = {
 			to: [env.CONTACT_TO_EMAIL],
 			subject: `New Get Involved form: ${name}`,
 			replyTo: email,
-			text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nIP: ${getClientAddress()}\n\n${message}`
+			text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`
 		});
 
 		if (mailError) return fail(502, { error: 'Saved, but email failed to send.' });
