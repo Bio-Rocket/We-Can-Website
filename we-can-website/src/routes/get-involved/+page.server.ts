@@ -37,7 +37,7 @@ export const actions: Actions = {
         }
 
 		const { error: mailError } = await resend.emails.send({
-			from: 'Website <noreply@yourdomain.com>',
+			from: 'WCAN <info@wcan-aero.ca>',
 			to: [env.CONTACT_TO_EMAIL],
 			subject: `New Get Involved form: ${name}`,
 			replyTo: email,
