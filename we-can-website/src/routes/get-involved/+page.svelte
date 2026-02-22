@@ -65,16 +65,15 @@
 							broad network of innovators. View our sponsorship package for more information, or
 							fill out our contact form to get started.
 						</p>
+
+						<button
+							type="button"
+							class="bg-primary-700 hover:bg-primary-600 text-white text-sm px-5 py-2 w-full transition-colors duration-200 mt-2"
+						>
+							Sponsorship Package
+						</button>
 					</div>
 				</div>
-
-				<!-- Sponsorship button pushed to bottom -->
-				<button
-					type="button"
-					class="bg-primary-700 hover:bg-primary-600 text-white text-sm px-5 py-2 w-full transition-colors duration-200"
-				>
-					Sponsorship Package
-				</button>
 			</div>
 
 			<!-- Right Side — Contact Form -->
@@ -107,7 +106,7 @@
 						<input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
 
 						<label class="flex flex-col gap-1">
-							<span class="text-sm text-white/50 uppercase tracking-widest">Name</span>
+							<span class="text-sm text-white uppercase tracking-widest">Name</span>
 							<input
 								class="bg-surface-800 border border-primary-700/40 text-white text-sm px-4 py-2 outline-none focus:border-primary-500 transition-colors duration-200 rounded-none w-full"
 								type="text"
@@ -118,7 +117,7 @@
 						</label>
 
 						<label class="flex flex-col gap-1">
-							<span class="text-sm text-white/50 uppercase tracking-widest">Email</span>
+							<span class="text-sm text-white uppercase tracking-widest">Email</span>
 							<input
 								class="bg-surface-800 border border-primary-700/40 text-white text-sm px-4 py-2 outline-none focus:border-primary-500 transition-colors duration-200 rounded-none w-full"
 								type="email"
@@ -129,7 +128,7 @@
 						</label>
 
 						<label class="flex flex-col gap-1">
-							<span class="text-sm text-white/50 uppercase tracking-widest">Phone Number</span>
+							<span class="text-sm text-white uppercase tracking-widest">Phone Number</span>
 							<input
 								class="bg-surface-800 border border-primary-700/40 text-white text-sm px-4 py-2 outline-none focus:border-primary-500 transition-colors duration-200 rounded-none w-full"
 								type="tel"
@@ -139,7 +138,7 @@
 						</label>
 
 						<label class="flex flex-col gap-1">
-							<span class="text-sm text-white/50 uppercase tracking-widest">Message</span>
+							<span class="text-sm text-white uppercase tracking-widest">Message</span>
 							<textarea
 								class="bg-surface-800 border border-primary-700/40 text-white text-sm px-4 py-2 outline-none focus:border-primary-500 transition-colors duration-200 rounded-none w-full resize-none"
 								rows="5"

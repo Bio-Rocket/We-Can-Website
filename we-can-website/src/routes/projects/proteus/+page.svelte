@@ -1,7 +1,7 @@
 <script lang="ts">
     let { data } = $props();
-    let proteusPhoto = data.proteusPhoto;
-    let proteusSmallPhoto = data.proteusSmallPhoto
+    // let proteusPhoto = data.proteusPhoto;
+    // let proteusSmallPhoto = data.proteusSmallPhoto
 </script>
 
 <div class="page">
@@ -38,7 +38,7 @@
                 <!-- Banner Image -->
                 <div class="overflow-hidden">
                     <img
-                        src={proteusSmallPhoto}
+                        src={data.proteusSmallPhoto}
                         alt="Proteus"
                         class="w-full h-full object-center block"
                     />
@@ -140,7 +140,7 @@
 			<div class="relative flex justify-center items-center w-full" style="height: 1000px;">
 				<!-- Rocket Image -->
 				<img
-					src={proteusPhoto}
+					src={data.proteusPhoto}
 					alt="Proteus Architecture"
 					class="h-full w-auto object-contain"
 					style="transform: rotate(90deg);"

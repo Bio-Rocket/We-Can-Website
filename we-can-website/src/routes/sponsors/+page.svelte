@@ -15,7 +15,7 @@
 
 	const BUCKET = 'sponsors';
 
-	const tierOrder = ['gold', 'silver', 'copper', 'partner'] as const;
+	const tierOrder = ['partner', 'gold', 'silver', 'copper'] as const;
 	type TierKey = (typeof tierOrder)[number];
 
 	const tierMeta: Record<
@@ -46,9 +46,9 @@
 		partner: {
 			title: 'Partners',
 			blurb: 'Organizations collaborating with WCAN.',
-			colsClass: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
-			padClass: 'p-5',
-			logoClamp: 'clamp(78px, 5.2vw, 110px)',
+			colsClass: 'grid-cols-2',
+			padClass: 'p-10 md:p-14',
+			logoClamp: 'clamp(160px, 12vw, 240px)',
 		},
 	};
 

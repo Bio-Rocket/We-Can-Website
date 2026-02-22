@@ -1,7 +1,7 @@
 <script>
 	let { data } = $props();
-	let teamMembers = data.teamMembers;
-	let teamPhoto = data.teamPhoto
+	// let teamMembers = data.teamMembers;
+	// let teamPhoto = data.teamPhoto
 </script>
 
 <div
@@ -24,7 +24,7 @@
 				<!-- Banner Image -->
 				<div class="bg-surface-900 overflow-hidden relative min-h-[380px]">
 					<img
-						src={teamPhoto}
+						src={data.teamPhoto}
 						alt="Biorocket winning team"
 						class="absolute inset-0 w-full h-full object-cover block"
 					/>
@@ -60,7 +60,7 @@
 			</div>
 
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center">
-				{#each teamMembers as member}
+				{#each data.teamMembers as member}
 					<div class="flex flex-col items-center relative group">
 						<!-- Circular Card / Image with Hover Blurb -->
 						<div
