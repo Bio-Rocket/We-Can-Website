@@ -7,7 +7,7 @@
 		Users,
 		Award
 	} from '@lucide/svelte';
-	
+	import Icon from '@iconify/svelte';
 
 	const LINKEDIN_URL = 'https://www.linkedin.com/company/biorocket/';
 	const GITHUB_URL = 'https://github.com/Bio-Rocket';
@@ -45,10 +45,10 @@
 	}
 
 	const stats = [
-		{ icon: Users, value: '100+', label: 'Students Impacted' },
-		{ icon: Globe, value: 'Outreach', label: 'Across Western Canada' },
-		{ icon: Globe, value: '25+', label: 'Global Industry Partners' },
-		{ icon: Award, value: '1st', label: 'Liquid Rocket in Alberta' }
+		{ icon: 'material-symbols:group-outline', value: '100+', label: 'Students Impacted' },
+		{ icon: 'fa-brands:canadian-maple-leaf', value: 'Outreach', label: 'Across Western Canada' },
+		{ icon: 'mdi:globe', value: '25+', label: 'Global Industry Partners' },
+		{ icon: 'material-symbols:trophy-sharp', value: '1st', label: 'Liquid Rocket in Alberta' },
 	];
 </script>
 
@@ -116,7 +116,11 @@
 					<div
 						class="bg-surface-900 p-9 flex flex-col gap-2.5 relative overflow-hidden transition-colors duration-200 before:absolute before:top-0 before:left-0 before:w-[3px] before:h-0 before:bg-primary-500 before:transition-[height] before:duration-300 before:ease-in-out hover:before:h-full hover:bg-surface-800"
 					>
-						<svelte:component this={stat.icon} size={22} class="text-primary-500" />
+						{#if typeof stat.icon === 'string'}
+							<Icon icon={stat.icon} width="32" height="32" class="text-primary-500" />
+						{:else}
+							<svelte:component this={stat.icon} size={32} class="text-primary-500" />
+						{/if}
 						<div class="text-2xl font-semibold leading-none text-white">{stat.value}</div>
 						<div class="text-sm text-white/65">{stat.label}</div>
 					</div>
