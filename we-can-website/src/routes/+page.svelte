@@ -15,8 +15,7 @@
 	const INSTAGRAM_URL = 'https://www.instagram.com/biorocketuofc/';
 
 	let { data } = $props();
-	let galleryImages = data.galleryImages;
-	let homePageImage = data.homePageImage;
+
 	let elemCarousel: HTMLDivElement | null = null;
 
 	function carouselLeft() {
@@ -57,7 +56,7 @@
 	<section class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
 		<div
 			class="absolute inset-0 bg-cover bg-center scale-[1.04]"
-			style="background-image: url('{homePageImage}');"
+			style="background-image: url('{data.homePageImage}');"
 		></div>
 		<div
 			class="absolute inset-0 bg-gradient-to-br from-black/75 via-black/45 to-primary-900/15 pointer-events-none"
@@ -119,7 +118,7 @@
 						{#if typeof stat.icon === 'string'}
 							<Icon icon={stat.icon} width="32" height="32" class="text-primary-500" />
 						{:else}
-							<svelte:component this={stat.icon} size={32} class="text-primary-500" />
+							<stat.icon size={32} class="text-primary-500" />
 						{/if}
 						<div class="text-2xl font-semibold leading-none text-white">{stat.value}</div>
 						<div class="text-sm text-white/65">{stat.label}</div>
@@ -153,7 +152,7 @@
 					bind:this={elemCarousel}
 					class="flex overflow-x-hidden aspect-video snap-x snap-mandatory scroll-smooth"
 				>
-					{#each galleryImages as url, i}
+					{#each data.galleryImages as url, i}
 						<img
 							class="flex-shrink-0 w-full object-cover snap-center"
 							src={url}
@@ -174,9 +173,9 @@
 
 			<div
 				class="grid gap-[2px] mt-[2px]"
-				style="grid-template-columns: repeat({galleryImages.length}, 1fr)"
+				style="grid-template-columns: repeat({data.galleryImages.length}, 1fr)"
 			>
-				{#each galleryImages as url, i}
+				{#each data.galleryImages as url, i}
 					<button
 						type="button"
 						class="bg-transparent border-none p-0 cursor-pointer overflow-hidden aspect-square block group"

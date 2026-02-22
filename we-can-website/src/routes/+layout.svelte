@@ -51,7 +51,7 @@
 			<AppBar.Toolbar class="grid-cols-[auto_1fr_auto] items-center !p-0">
 				<AppBar.Lead>
 					<img
-						src="/WCAN Logo - High Rez - Dark Mode.png"
+						src="/wcan-logo-dark.png"
 						alt="Logo"
 						class="w-auto h-15 object-contain"
 					/>
