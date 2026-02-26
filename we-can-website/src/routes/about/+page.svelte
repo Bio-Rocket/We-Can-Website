@@ -1,7 +1,7 @@
 <script>
 	let { data } = $props();
-	let teamMembers = data.teamMembers;
-	let teamPhoto = data.teamPhoto
+	// let teamMembers = data.teamMembers;
+	// let teamPhoto = data.teamPhoto
 </script>
 <div
     class="relative bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 overflow-hidden min-h-screen flex items-start"
@@ -59,7 +59,7 @@
 			</div>
 
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center">
-				{#each teamMembers as member}
+				{#each data.teamMembers as member}
 					<div class="flex flex-col items-center relative group">
 						<!-- Circular Card / Image with Hover Blurb -->
 						<div

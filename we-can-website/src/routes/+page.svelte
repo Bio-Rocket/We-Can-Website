@@ -8,8 +8,7 @@
 	const INSTAGRAM_URL = 'https://www.instagram.com/biorocketuofc/';
 
 	let { data } = $props();
-	let galleryImages = data.galleryImages;
-	let homePageImage = data.homePageImage;
+
 	let elemCarousel: HTMLDivElement | null = null;
 
 	function carouselLeft() {
@@ -50,7 +49,7 @@
 	<section class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
 		<div
 			class="absolute inset-0 bg-cover bg-center scale-[1.04]"
-			style="background-image: url('{homePageImage}');"
+			style="background-image: url('{data.homePageImage}');"
 		></div>
 		<div
 			class="absolute inset-0 bg-gradient-to-br from-black/75 via-black/45 to-primary-900/15 pointer-events-none"
@@ -113,7 +112,7 @@
 						{#if typeof stat.icon === 'string'}
 							<Icon icon={stat.icon} width="32" height="32" class="text-primary-500" />
 						{:else}
-							<svelte:component this={stat.icon} size={32} class="text-primary-500" />
+							<stat.icon size={32} class="text-primary-500" />
 						{/if}
 						<div class="text-2xl font-semibold leading-none text-white">{stat.value}</div>
 						<div class="text-sm text-white/65">{stat.label}</div>
