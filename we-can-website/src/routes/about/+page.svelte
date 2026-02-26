@@ -1,7 +1,7 @@
 <script>
 	let { data } = $props();
-	// let teamMembers = data.teamMembers;
-	// let teamPhoto = data.teamPhoto
+	let teamMembers = data.teamMembers;
+	let teamPhoto = data.teamPhoto
 </script>
 <div
     class="relative bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 overflow-hidden min-h-screen flex items-start"

@@ -3,7 +3,6 @@
 	import { AppBar } from '@skeletonlabs/skeleton-svelte';
 	import { MenuIcon, Instagram, Linkedin, Youtube, Github } from '@lucide/svelte';
 	import { page } from '$app/stores';
-	import { Menu, Portal } from '@skeletonlabs/skeleton-svelte';
 
 	const { children } = $props();
 
@@ -14,11 +13,6 @@
 	const GITHUB_URL = 'https://github.com/Bio-Rocket';
 	const YOUTUBE_URL = 'https://www.youtube.com/@BioRocket-yyc';
 	const INSTAGRAM_URL = 'https://www.instagram.com/biorocketuofc/';
-
-	// const projectLinks = [
-	//         { label: 'Proteus', href: '/projects/proteus' },
-	//         // { label: 'Test Stand', href: '/projects/test-stand' }
-	// ];
 
 	// =========================
 	// NAVIGATION BAR
@@ -42,6 +36,10 @@
 	const inactiveNavLink = 'text-surface-600-200';
 
 	let mobileMenuOpen = $state(false);
+
+	function closeMobileMenu() {
+		mobileMenuOpen = false;
+	}
 </script>
 
 <div class="bg-[var(--color-background)] text-[var(--color-text)]">
@@ -52,32 +50,41 @@
 		<AppBar class="bg-[var(--color-surface-500)] border-none !shadow-none py-2">
 			<AppBar.Toolbar class="grid-cols-[auto_1fr_auto] items-center !p-0">
 				<AppBar.Lead class="flex items-center gap-2">
-					<div class="md:hidden">
-						<Menu>
-							<Menu.Trigger
-								class="btn-icon !w-[44px] !h-[44px] flex items-center justify-center text-[--base-font-color] hover:bg-[var(--color-surface-600)] rounded-lg"
+
+					<!-- Mobile Hamburger Button -->
+					<div class="md:hidden relative">
+						<button
+							class="btn-icon !w-[44px] !h-[44px] flex items-center justify-center text-[--base-font-color] hover:bg-[var(--color-surface-600)] rounded-lg"
+							onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
+							aria-label="Toggle menu"
+						>
+							<MenuIcon class="w-6 h-6" />
+						</button>
+
+						<!-- Mobile Dropdown Menu -->
+						{#if mobileMenuOpen}
+							<!-- Backdrop to close menu when clicking outside -->
+							<button
+								class="fixed inset-0 z-40 bg-transparent cursor-default"
+								onclick={closeMobileMenu}
+								aria-label="Close menu"
+							></button>
+
+							<div
+								class="absolute left-0 top-full mt-1 z-50 min-w-[200px] bg-[var(--color-surface-500)] border border-white/10 shadow-lg rounded-lg overflow-hidden"
 							>
-								<MenuIcon class="w-6 h-6" />
-							</Menu.Trigger>
-							<Portal>
-								<Menu.Positioner>
-									<Menu.Content
-										class="bg-[var(--color-surface-500)] border border-white/10 shadow-lg z-50 min-w-[200px]"
+								{#each navLinks as link}
+									<a
+										href={link.href}
+										class="block w-full px-4 py-3 text-sm text-white hover:text-[var(--color-success-500)] hover:bg-[var(--color-surface-600)] transition-colors
+										{$page.url.pathname === link.href ? activeNavLink : ''}"
+										onclick={closeMobileMenu}
 									>
-										{#each navLinks as link}
-											<Menu.Item value={link.href}>
-												<Menu.ItemText>
-													<a href={link.href} class="block w-full px-2 py-1 text-white">
-														{link.label}
-													</a>
-												</Menu.ItemText>
-											</Menu.Item>
-										{/each}
-										<Menu.Separator />
-									</Menu.Content>
-								</Menu.Positioner>
-							</Portal>
-						</Menu>
+										{link.label}
+									</a>
+								{/each}
+							</div>
+						{/if}
 					</div>
 
 					<a href="/">
@@ -89,6 +96,7 @@
 					</a>
 				</AppBar.Lead>
 
+				<!-- Desktop Nav -->
 				<AppBar.Headline class="hidden md:flex justify-center items-center gap-4">
 					<nav class="flex items-center gap-4">
 						{#each navLinks as link}
@@ -102,6 +110,7 @@
 					</nav>
 				</AppBar.Headline>
 
+				<!-- Social Icons -->
 				<AppBar.Trail class="flex items-center gap-2">
 					<div class="hidden lg:flex items-center">
 						<a href={LINKEDIN_URL} target="_blank" class={socialBtn}>
@@ -142,8 +151,7 @@
 					><Linkedin class={socialIcon} /></a
 				>
 				<a href={GITHUB_URL} target="_blank" class={socailBtnFtr}><Github class={socialIcon} /></a>
-				<a href={YOUTUBE_URL} target="_blank" class={socailBtnFtr}><Youtube class={socialIcon} /></a
-				>
+				<a href={YOUTUBE_URL} target="_blank" class={socailBtnFtr}><Youtube class={socialIcon} /></a>
 				<a href={INSTAGRAM_URL} target="_blank" class={socailBtnFtr}
 					><Instagram class={socialIcon} /></a
 				>
