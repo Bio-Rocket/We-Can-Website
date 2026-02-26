@@ -3,32 +3,31 @@
 	let teamMembers = data.teamMembers;
 	let teamPhoto = data.teamPhoto
 </script>
-
 <div
-	class="relative bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 overflow-hidden min-h-screen flex items-start"
-	style="padding-top: 64px;"
+    class="relative bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 overflow-hidden min-h-screen flex items-start"
+    style="padding-top: 96px;"
 >
-	<div
-		class="absolute -top-20 -right-28 w-[500px] h-[700px] bg-gradient-to-br from-transparent via-transparent to-primary-900/10 -rotate-15 pointer-events-none"
-	></div>
+    <div
+        class="absolute -top-20 -right-28 w-[500px] h-[700px] bg-gradient-to-br from-transparent via-transparent to-primary-900/10 -rotate-15 pointer-events-none"
+    ></div>
 
-	<div class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-12 py-10 w-full box-border">
-		<!-- ── OUR HISTORY ─────────────────────────────────────────────── -->
-		<div class="mb-12">
-			<div class="mb-4">
-				<h2 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white mt-2 mb-3.5">Our History</h2>
-				<div class="w-[416px] h-[3px] bg-primary-500"></div>
-			</div>
+    <div class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-12 py-10 w-full box-border">
+        <!-- ── OUR HISTORY ─────────────────────────────────────────────── -->
+        <div class="mb-12">
+            <div class="mb-4">
+                <h2 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white mt-2 mb-3.5">Our History</h2>
+                <div class="w-full max-w-[416px] h-[3px] bg-primary-500"></div>
+            </div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-[2px]">
-				<!-- Banner Image -->
-				<div class="bg-surface-900 overflow-hidden relative min-h-[380px]">
-					<img
-						src={teamPhoto}
-						alt="Biorocket winning team"
-						class="absolute inset-0 w-full h-full object-cover block"
-					/>
-				</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-[2px]">
+                <!-- Banner Image -->
+                <div class="bg-surface-900 overflow-hidden relative min-h-[260px] md:min-h-[380px]">
+                    <img
+                        src={teamPhoto}
+                        alt="Biorocket winning team"
+                        class="absolute inset-0 w-full h-full object-cover block"
+                    />
+                </div>
 
 				<!-- History Text — styled like a stat card -->
 				<div

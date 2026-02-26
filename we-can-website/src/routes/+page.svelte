@@ -1,12 +1,5 @@
 <script lang="ts">
-	import {
-		ArrowLeft,
-		ArrowRight,
-		Zap,
-		Globe,
-		Users,
-		Award
-	} from '@lucide/svelte';
+	import { ArrowLeft, ArrowRight, Zap, Globe, Users, Award } from '@lucide/svelte';
 	import Icon from '@iconify/svelte';
 
 	const LINKEDIN_URL = 'https://www.linkedin.com/company/biorocket/';
@@ -75,19 +68,21 @@
 					AEROSPACE INITIATIVE
 				</span>
 			</h1>
-			<p class="text-4xl text-white/80 m-0">Empowering the next generation of aerospace leaders</p>
+			<p class="text-2xl md:text-4xl text-white/80 m-0">
+				Empowering the next generation of aerospace leaders
+			</p>
 		</div>
 	</section>
 
 	<!-- RECRUITMENT -->
 	<section
-		class="relative bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 border-t border-primary-700/40 overflow-hidden h-screen flex items-center"
+		class="relative bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 border-t border-primary-700/40 overflow-hidden min-h-screen flex items-center"
 	>
 		<div
 			class="absolute -top-20 -right-28 w-[500px] h-[700px] bg-gradient-to-br from-transparent via-transparent to-primary-900/10 -rotate-15 pointer-events-none"
 		></div>
 		<div
-			class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-12 py-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center w-full box-border"
+			class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-12 pt-24 pb-10 md:py-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center w-full box-border"
 		>
 			<!-- LEFT -->
 			<div>
@@ -109,12 +104,11 @@
 					<span>Get Involved</span>
 				</a>
 			</div>
-
 			<!-- RIGHT: stats -->
 			<div class="grid grid-cols-2 gap-[2px] bg-primary-700/40">
 				{#each stats as stat}
 					<div
-						class="bg-surface-900 p-9 flex flex-col gap-2.5 relative overflow-hidden transition-colors duration-200 before:absolute before:top-0 before:left-0 before:w-[3px] before:h-0 before:bg-primary-500 before:transition-[height] before:duration-300 before:ease-in-out hover:before:h-full hover:bg-surface-800"
+						class="bg-surface-900 p-5 md:p-9 flex flex-col gap-2.5 relative overflow-hidden transition-colors duration-200 before:absolute before:top-0 before:left-0 before:w-[3px] before:h-0 before:bg-primary-500 before:transition-[height] before:duration-300 before:ease-in-out hover:before:h-full hover:bg-surface-800"
 					>
 						{#if typeof stat.icon === 'string'}
 							<Icon icon={stat.icon} width="32" height="32" class="text-primary-500" />
@@ -128,7 +122,6 @@
 			</div>
 		</div>
 	</section>
-
 	<!-- GALLERY -->
 	<section
 		class="bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 h-screen flex items-center"
@@ -153,7 +146,7 @@
 					bind:this={elemCarousel}
 					class="flex overflow-x-hidden aspect-video snap-x snap-mandatory scroll-smooth"
 				>
-					{#each galleryImages as url, i}
+					{#each data.galleryImages as url, i}
 						<img
 							class="flex-shrink-0 w-full object-cover snap-center"
 							src={url}
@@ -174,9 +167,9 @@
 
 			<div
 				class="grid gap-[2px] mt-[2px]"
-				style="grid-template-columns: repeat({galleryImages.length}, 1fr)"
+				style="grid-template-columns: repeat({data.galleryImages.length}, 1fr)"
 			>
-				{#each galleryImages as url, i}
+				{#each data.galleryImages as url, i}
 					<button
 						type="button"
 						class="bg-transparent border-none p-0 cursor-pointer overflow-hidden aspect-square block group"
