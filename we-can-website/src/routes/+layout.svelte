@@ -82,7 +82,7 @@
 
 					<a href="/">
 						<img
-							src="/WCAN Logo - High Rez - Dark Mode.png"
+							src="/wcan-logo-dark.png"
 							alt="Logo"
 							class="w-auto h-10 md:h-15 object-contain"
 						/>
