@@ -49,14 +49,12 @@
                             hover:before:h-full hover:bg-surface-800"
                     >
                         <p class="text-base leading-7 text-white m-0">
-                            As the flagship vehicle of the Western Canada Aerospace Initiative, Proteus represents a
-                            historic milestone in regional aerospace development, as it is the first liquid rocket
-                            developed and tested in Alberta. Proteus began in 2024 as an engineering capstone design
-                            project at the University of Calgary. Today, the project continues to serve as a valuable
-                            training opportunity for students to gain hands-on experience with advanced aerospace
-                            applications. Now targeting a Summer 2027 launch, the Proteus project continues to lead the
-                            way in WCAN's efforts to push the technical boundaries of student aerospace projects in
-                            Western Canada.
+                            WCAN’s flagship vehicle, Proteus, represents a historic milestone in regional aerospace development,
+                             as it is the first liquid rocket developed and tested in Alberta and the second heterogeneously 
+                             pressurized student rocket in Canada. With 20+ members contributing to development and testing, 
+                             the Proteus project provides hands-on experience with propulsion, machining, system design, 
+                             range safety, testing, data acquisition, and project management - skills urgently needed in 
+                             Canada’s growing aerospace sector.
                         </p>
                     </div>
 
@@ -99,8 +97,8 @@
                     <div class="text-sm text-white/50 uppercase tracking-widest">Target Altitude</div>
                 </div>
                 <div class="bg-surface-900 p-5 md:p-8 flex flex-col gap-2">
-                    <div class="text-4xl md:text-6xl font-bold text-white">5 kN</div>
-                    <div class="text-sm text-white/50 uppercase tracking-widest">Thrust</div>
+                    <div class="text-4xl md:text-6xl font-bold text-white">20+</div>
+                    <div class="text-sm text-white/50 uppercase tracking-widest">Team Members</div>
                 </div>
                 <div class="bg-surface-900 p-5 md:p-8 flex flex-col gap-2">
                     <div class="text-4xl md:text-6xl font-bold text-white">2027</div>

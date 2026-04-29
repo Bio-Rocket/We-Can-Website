@@ -83,8 +83,8 @@
 					<div class="flex flex-col gap-4">
 						<h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-white">Work with Us!</h2>
 						<p class="text-base leading-7 text-white/80">
-							Are you looking to take your student aerospace project to the next level? WCAN
-							provides technical support, mentorship, and other growth opportunities to student-led
+							Are you looking to take your aerospace innovation to the next level? WCAN
+							provides technical support, mentorship, and other growth opportunities to
 							projects across Western Canada. Tell us about your mission and let's explore how we
 							can support your team!
 						</p>

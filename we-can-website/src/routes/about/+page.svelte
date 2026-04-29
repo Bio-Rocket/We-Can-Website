@@ -37,15 +37,14 @@
 					       hover:before:h-full hover:bg-surface-800"
 				>
 					<p class="text-base leading-7 text-white m-0">
-						The Western Canada Aerospace Initiative (WCAN) evolved from Bio Rocket, an ambitious
-						engineering capstone project started at the University of Calgary in 2024. Originally
-						focused on developing Proteus, Alberta's first liquid rocket, the team completed the
-						first static fire test of a liquid rocket engine in Alberta in August 2025, and is
-						planning to launch Proteus in Summer 2027. Recognizing a broader need for technical
-						maturity and knowledge transfer in student aerospace projects across Western Canada, we
-						began transforming our project into a non-profit organization and founded WCAN in 2026.
-						Our organization is dedicated to providing access to equipment, training opportunities,
-						and technical support to student aerospace initiatives throughout the region.
+						The Western Canada Aerospace Initiative (WCAN) evolved from Bio Rocket, 
+						an ambitious engineering capstone project started at the University of 
+						Calgary in 2024. Originally focused on developing Proteus, Alberta's first
+						student-designed liquid rocket, the team completed the first static fire
+						test of a student-developed liquid rocket engine in Alberta in August 2025.
+						Recognizing a broader regional need for collaborative technical projects,
+						shared infrastructure, and talent development, the team transformed their
+						project into a non-profit organization and founded WCAN in 2026.
 					</p>
 				</div>
 			</div>

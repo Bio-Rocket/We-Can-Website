@@ -9,7 +9,7 @@
 	// =========================
 	// SOCIAL MEDIA LINKS
 	// =========================
-	const LINKEDIN_URL = 'https://www.linkedin.com/company/biorocket/';
+	const LINKEDIN_URL = 'http://www.linkedin.com/company/wcan-aero/';
 	const GITHUB_URL = 'https://github.com/Bio-Rocket';
 	const YOUTUBE_URL = 'https://www.youtube.com/@BioRocket-yyc';
 	const INSTAGRAM_URL = 'https://www.instagram.com/biorocketuofc/';
