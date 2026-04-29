@@ -103,7 +103,7 @@
 				<a
 					href="/get-involved"
 					data-sveltekit-preload-data
-					class="inline-flex items-center gap-2.5 px-5 py-2 bg-[var(--color-primary-700)] hover:bg-[var(--color-secondary-700)] text-white text-sm no-underline transition-all duration-200 ease-in-out"
+					class="inline-flex items-center gap-2.5 px-5 py-2 bg-[var(--color-primary-700)] hover:hover:bg-primary-600 text-white text-sm no-underline transition-all duration-200 ease-in-out"
 				>
 					<span>Get Involved</span>
 				</a>

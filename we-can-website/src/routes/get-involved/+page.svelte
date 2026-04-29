@@ -41,16 +41,10 @@
 							development to business operations. Fill out the contact form and we'll be in touch
 							with the next steps for your application!
 						</p>
-						<!-- <button
-							type="button"
-							class="bg-primary-700 hover:bg-primary-600 text-white text-sm px-5 py-2 w-full transition-colors duration-200"
-						>
-							Recruitment Form
-						</button> -->
 						<a
 							href="https://docs.google.com/forms/d/e/1FAIpQLSdjmZCg1GOX5FpEUBZhhURBOCkHOHYG1RxsBydMe8NZxt0hvg/viewform"
-							data-sveltekit-preload-data
-							class="inline-flex items-center gap-2.5 px-5 py-2 bg-[var(--color-primary-700)] hover:bg-[var(--color-secondary-700)] text-white text-sm no-underline transition-all duration-200 ease-in-out"
+							data-sveltekit-preload-data							
+							class="bg-primary-700 hover:bg-primary-600 text-white text-sm px-6 py-2 text-center transition-colors duration-200 no-underline"
 						>
 							<span>Recruitment Form</span>
 						</a>
@@ -75,18 +69,11 @@
 							broad network of innovators. View our sponsorship package for more information, or
 							fill out our contact form to get started.
 						</p>
-
-						<!-- <button
-							type="button"
-							class="bg-primary-700 hover:bg-primary-600 text-white text-sm px-5 py-2 w-full transition-colors duration-200 mt-2"
-						>
-							Sponsorship Package
-						</button> -->
 						<a
 							href="/WCAN Sponsorship Package.pdf"
 							data-sveltekit-preload-data
 							download
-							class="inline-flex items-center gap-2.5 px-5 py-2 bg-[var(--color-primary-700)] hover:bg-[var(--color-secondary-700)] text-white text-sm no-underline transition-all duration-200 ease-in-out"
+							class="bg-primary-700 hover:bg-primary-600 text-white text-sm px-6 py-2 text-center transition-colors duration-200 no-underline"
 						>
 							<span>Sponsorship Package</span>
 						</a>
