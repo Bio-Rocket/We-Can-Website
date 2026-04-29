@@ -75,6 +75,10 @@
 	const grouped = groupByTier(sponsors);
 </script>
 
+<head>
+  <title>WCAN | Sponsors</title>
+</head>
+
 <div
 	class="relative bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 overflow-hidden min-h-screen flex items-start"
 	style="padding-top: 64px;"

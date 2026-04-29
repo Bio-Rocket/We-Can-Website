@@ -27,6 +27,10 @@
     ];
 </script>
 
+<head>
+  <title>WCAN | Proteus</title>
+</head>
+
 <div class="page">
     <!-- Hero Section -->
     <section class="relative bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 overflow-hidden min-h-screen flex items-center justify-center">

@@ -3,6 +3,9 @@
 	let teamMembers = data.teamMembers;
 	let teamPhoto = data.teamPhoto
 </script>
+<head>
+  <title>WCAN | About</title>
+</head>
 <div
     class="relative bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 overflow-hidden min-h-screen flex items-start"
     style="padding-top: 96px;"

@@ -44,6 +44,10 @@
 	];
 </script>
 
+<head>
+  <title>WCAN</title>
+</head>
+
 <div class="bg-surface-900 text-white font-sans overflow-x-hidden">
 	<!-- HERO -->
 	<section class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
