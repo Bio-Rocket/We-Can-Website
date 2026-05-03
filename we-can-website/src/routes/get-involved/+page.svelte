@@ -3,6 +3,9 @@
 	let { form } = $props();
 </script>
 
+<head>
+  <title>WCAN | Get Involved</title>
+</head>
 <div
 	class="relative bg-gradient-to-b from-surface-700 via-surface-800 to-surface-900 border-t border-primary-700/40 overflow-hidden min-h-screen flex items-start"
 	style="padding-top: 64px;"
@@ -38,12 +41,13 @@
 							development to business operations. Fill out the contact form and we'll be in touch
 							with the next steps for your application!
 						</p>
-						<button
-							type="button"
-							class="bg-primary-700 hover:bg-primary-600 text-white text-sm px-5 py-2 w-full transition-colors duration-200"
+						<a
+							href="https://docs.google.com/forms/d/e/1FAIpQLSdjmZCg1GOX5FpEUBZhhURBOCkHOHYG1RxsBydMe8NZxt0hvg/viewform"
+							data-sveltekit-preload-data							
+							class="bg-primary-700 hover:bg-primary-600 text-white text-sm px-6 py-2 text-center transition-colors duration-200 no-underline"
 						>
-							Recruitment Form
-						</button>
+							<span>Recruitment Form</span>
+						</a>
 					</div>
 
 					<!-- Divider -->
@@ -65,13 +69,14 @@
 							broad network of innovators. View our sponsorship package for more information, or
 							fill out our contact form to get started.
 						</p>
-
-						<button
-							type="button"
-							class="bg-primary-700 hover:bg-primary-600 text-white text-sm px-5 py-2 w-full transition-colors duration-200 mt-2"
+						<a
+							href="/WCAN Sponsorship Package.pdf"
+							data-sveltekit-preload-data
+							download
+							class="bg-primary-700 hover:bg-primary-600 text-white text-sm px-6 py-2 text-center transition-colors duration-200 no-underline"
 						>
-							Sponsorship Package
-						</button>
+							<span>Sponsorship Package</span>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -83,8 +88,8 @@
 					<div class="flex flex-col gap-4">
 						<h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-white">Work with Us!</h2>
 						<p class="text-base leading-7 text-white/80">
-							Are you looking to take your student aerospace project to the next level? WCAN
-							provides technical support, mentorship, and other growth opportunities to student-led
+							Are you looking to take your aerospace innovation to the next level? WCAN
+							provides technical support, mentorship, and other growth opportunities to
 							projects across Western Canada. Tell us about your mission and let's explore how we
 							can support your team!
 						</p>

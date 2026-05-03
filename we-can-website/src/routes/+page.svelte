@@ -37,12 +37,16 @@
 	}
 
 	const stats = [
-		{ icon: 'material-symbols:group-outline', value: '100+', label: 'Students Impacted' },
+		{ icon: 'material-symbols:group-outline', value: '200+', label: 'Students Impacted' },
 		{ icon: 'fa-brands:canadian-maple-leaf', value: 'Outreach', label: 'Across Western Canada' },
 		{ icon: 'mdi:globe', value: '25+', label: 'Global Industry Partners' },
-		{ icon: 'material-symbols:trophy-sharp', value: '1st', label: 'Liquid Rocket in Alberta' },
+		{ icon: 'ion:rocket-sharp', value: '2', label: 'Startups Launched' },
 	];
 </script>
+
+<head>
+  <title>WCAN</title>
+</head>
 
 <div class="bg-surface-900 text-white font-sans overflow-x-hidden">
 	<!-- HERO -->
@@ -90,15 +94,16 @@
 					<em class="not-italic text-tertiary-500">You.</em>
 				</h2>
 				<p class="text-base leading-7 text-white/65 m-0 mb-9 max-w-[480px]">
-					Are you looking to take your student aerospace project to the next level? WCAN provides
-					technical support, mentorship, and other growth opportunities to student-led projects
-					across Western Canada. Tell us about your mission through the contact form, and let's
-					explore how we can support your team!
+					WCAN advances aerospace innovation by combining workforce development with infrastructure 
+					and commercialization support. We empower student aerospace teams and deliver hands-on 
+					technical programs that cultivate industry-ready talent. Through developing shared 
+					infrastructure and strategic partnerships, we reduce barriers to entry for emerging 
+					companies - with two aerospace startups launched to date.
 				</p>
 				<a
 					href="/get-involved"
 					data-sveltekit-preload-data
-					class="inline-flex items-center gap-2.5 px-5 py-2 bg-[var(--color-primary-700)] hover:bg-[var(--color-secondary-700)] text-white text-sm no-underline transition-all duration-200 ease-in-out"
+					class="inline-flex items-center gap-2.5 px-5 py-2 bg-[var(--color-primary-700)] hover:hover:bg-primary-600 text-white text-sm no-underline transition-all duration-200 ease-in-out"
 				>
 					<span>Get Involved</span>
 				</a>
