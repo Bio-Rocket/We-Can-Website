@@ -23,6 +23,7 @@
 		{ label: 'Projects', href: '/projects/proteus' },
 		{ label: 'Sponsors', href: '/sponsors' },
 		{ label: 'Get Involved', href: '/get-involved' },
+		{ label: 'Announcements', href: '/get-involved' },
 	];
 
 	const socialBtn =
@@ -50,7 +51,6 @@
 		<AppBar class="bg-[var(--color-surface-500)] border-none !shadow-none py-2">
 			<AppBar.Toolbar class="grid-cols-[auto_1fr_auto] items-center !p-0">
 				<AppBar.Lead class="flex items-center gap-2">
-
 					<!-- Mobile Hamburger Button -->
 					<div class="md:hidden relative">
 						<button
@@ -88,11 +88,7 @@
 					</div>
 
 					<a href="/">
-						<img
-							src="/wcan-logo-dark.png"
-							alt="Logo"
-							class="w-auto h-10 md:h-15 object-contain"
-						/>
+						<img src="/wcan-logo-dark.png" alt="Logo" class="w-auto h-10 md:h-15 object-contain" />
 					</a>
 				</AppBar.Lead>
 
@@ -151,7 +147,8 @@
 					><Linkedin class={socialIcon} /></a
 				>
 				<a href={GITHUB_URL} target="_blank" class={socailBtnFtr}><Github class={socialIcon} /></a>
-				<a href={YOUTUBE_URL} target="_blank" class={socailBtnFtr}><Youtube class={socialIcon} /></a>
+				<a href={YOUTUBE_URL} target="_blank" class={socailBtnFtr}><Youtube class={socialIcon} /></a
+				>
 				<a href={INSTAGRAM_URL} target="_blank" class={socailBtnFtr}
 					><Instagram class={socialIcon} /></a
 				>
@@ -159,3 +156,4 @@
 		</div>
 	</footer>
 </div>
+
