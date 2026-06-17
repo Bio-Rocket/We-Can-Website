@@ -23,7 +23,7 @@
 		{ label: 'Projects', href: '/projects/proteus' },
 		{ label: 'Sponsors', href: '/sponsors' },
 		{ label: 'Get Involved', href: '/get-involved' },
-		{ label: 'Announcements', href: '/get-involved' },
+		{ label: 'Announcements', href: 'announcements' },
 	];
 
 	const socialBtn =
@@ -156,4 +156,3 @@
 		</div>
 	</footer>
 </div>
-
