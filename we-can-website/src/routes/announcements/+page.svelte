@@ -24,6 +24,12 @@
 	let listPosts = $derived(filtered.filter((p) => p !== featuredPost));
 
 	let isFiltered = $derived(activeFilter !== 'All');
+	function linkify(text: string) {
+		return text.replace(
+			/(https?:\/\/[^\s]+)/g,
+			'<a href="$1" target="_blank" class="text-primary-400 underline hover:text-primary-300">$1</a>'
+		);
+	}
 </script>
 
 <div
@@ -57,7 +63,7 @@
 		</div>
 
 		<div class="flex flex-col gap-[2px] bg-primary-700/40">
-			<!-- Featured post ��� full width -->
+			<!-- Featured post full width -->
 			{#if featuredPost}
 				<div class="bg-surface-900 p-5 md:p-9">
 					<div class="flex items-center gap-3 mb-5 flex-wrap">
@@ -94,9 +100,13 @@
 
 							<span class="text-xs text-white/40 uppercase tracking-widest"></span>
 						</div>
-
-						<p class="text-base leading-7 text-white/80 max-w-[680px]">
-							{isFiltered ? featuredPost.content : featuredPost.summary}
+						<p class="text-base leading-7 text-white/80 max-w-[680px] whitespace-pre-line">
+							{@html linkify(
+								isFiltered
+									? featuredPost.content +
+											(featuredPost.hyperlink ? ' ' + featuredPost.hyperlink : '')
+									: featuredPost.summary
+							)}
 						</p>
 
 						{#if !isFiltered}
@@ -140,8 +150,12 @@
 									<span class="text-xs text-white/40">{post.author}</span>
 								</div>
 
-								<p class="text-sm leading-6 text-white/70 mb-4 flex-1">
-									{isFiltered ? post.content : post.summary}
+								<p class="text-sm leading-6 text-white/70 mb-4 flex-1 whitespace-pre-line">
+									{@html linkify(
+										isFiltered
+											? post.content + (post.hyperlink ? '\n' + post.hyperlink : '')
+											: post.summary
+									)}
 								</p>
 
 								<div class="h-[1px] bg-primary-700/40 mt-2"></div>
