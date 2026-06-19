@@ -24,11 +24,26 @@
 	let listPosts = $derived(filtered.filter((p) => p !== featuredPost));
 
 	let isFiltered = $derived(activeFilter !== 'All');
-	function linkify(text: string) {
-		return text.replace(
-			/(https?:\/\/[^\s]+)/g,
+
+	function renderContent(text: string | null | undefined, images: (string | undefined)[] = []) {
+		let html = text ?? '';
+
+		images.forEach((url, i) => {
+			const token = new RegExp(`\\[img${i + 1}\\]`, 'g');
+			html = url
+				? html.replace(
+						token,
+						`<img src="${url}" alt="" class="w-full max-w-[480px] h-auto object-contain my-4" />`
+					)
+				: html.replace(token, '');
+		});
+
+		html = html.replace(
+			/(https?:\/\/[^\s<]+)(?![^<]*>)/g,
 			'<a href="$1" target="_blank" class="text-primary-400 underline hover:text-primary-300">$1</a>'
 		);
+
+		return html;
 	}
 </script>
 
@@ -100,12 +115,23 @@
 
 							<span class="text-xs text-white/40 uppercase tracking-widest"></span>
 						</div>
+
+						<!--- Header Image Featured Post --->
+						{#if featuredPost.header_image}
+							<img
+								src={featuredPost.header_image}
+								alt={featuredPost.title}
+								class="w-full max-w-[768px] h-[307px] object-contain object-left mb-5"
+							/>
+						{/if}
 						<p class="text-base leading-7 text-white/80 max-w-[680px] whitespace-pre-line">
-							{@html linkify(
+							<!--- Regex for Feature Post --->
+							{@html renderContent(
 								isFiltered
 									? featuredPost.content +
 											(featuredPost.hyperlink ? ' ' + featuredPost.hyperlink : '')
-									: featuredPost.summary
+									: (featuredPost.summary ?? featuredPost.content ?? ''),
+								isFiltered ? [featuredPost.image_1, featuredPost.image_2, featuredPost.image_3] : []
 							)}
 						</p>
 
@@ -150,11 +176,22 @@
 									<span class="text-xs text-white/40">{post.author}</span>
 								</div>
 
+								<!--- Header Image --->
+								{#if post.header_image}
+									<img
+										src={post.header_image}
+										alt={post.title}
+										class="w-full h-[160px] md:h-[180px] object-contain object-left mb-5"
+									/>
+								{/if}
+
 								<p class="text-sm leading-6 text-white/70 mb-4 flex-1 whitespace-pre-line">
-									{@html linkify(
+									<!--- Regex for content --->
+									{@html renderContent(
 										isFiltered
 											? post.content + (post.hyperlink ? '\n' + post.hyperlink : '')
-											: post.summary
+											: (post.summary ?? post.content ?? ''),
+										isFiltered ? [post.image_1, post.image_2, post.image_3] : []
 									)}
 								</p>
 
