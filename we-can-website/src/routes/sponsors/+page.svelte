@@ -246,7 +246,6 @@
 		width: calc(100%);
 		height: calc(100%);
 		object-fit: contain;
-		transition: opacity 220ms ease-in-out;
 	}
 
 	.logo-black {
