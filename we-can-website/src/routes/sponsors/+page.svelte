@@ -8,7 +8,6 @@
 		logo_black_path: string;
 		website_url?: string | null;
 		tier: string;
-		order_index?: number | null;
 	};
 
 	export let data: { sponsors: Sponsor[] };
