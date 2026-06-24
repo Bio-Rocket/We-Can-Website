@@ -9,8 +9,8 @@ export const load: PageServerLoad = async ({ fetch }) => {
 
 	const { data, error } = await supabase
 		.from('sponsors')
-		.select('id,name,logo_color_path,logo_black_path,website_url,tier,order_index')
-		.order('order_index', { ascending: true });
+		.select('id,name,logo_color_path,logo_black_path,website_url,tier')
+		.order('name', { ascending: true });
 
 	if (error) {
 		console.error('Supabase error:', error);
